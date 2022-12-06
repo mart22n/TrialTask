@@ -85,8 +85,6 @@ class Model {
     }
 
     startServer() {
-        const port = 3000;
-        const hostName = "127.0.0.1";
         const server = http.createServer((request, response) => 
         {this.onHttpReq(request, response)});
         server.listen(port, hostName, () => {
