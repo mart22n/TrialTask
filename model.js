@@ -1,5 +1,7 @@
 const http = require('http');
 const url = require('url');
+const port = require('./constants').port;
+const hostName = require('./constants').hostName;
 
 const HttpMethod = require('./constants').HttpMethod;
 const Calculator = require('./calculator');
