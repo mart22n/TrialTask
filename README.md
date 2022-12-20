@@ -1,4 +1,4 @@
-# TrialTask
+# A Vanilla NodeJS Implementation Of a Simple REST Server
 
 ## Usage
 For using the GET endpoint, send a HTTP request to localhost:3000 with query ?fact=<number>, 
