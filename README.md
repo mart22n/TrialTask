@@ -1,5 +1,5 @@
 # A Vanilla NodeJS Implementation ff a Simple RESTful MVC Server
-The server caches the last calculation results, and implements basic HTTP URI discovery by returning available paths in response to HTTP OPTIONS request.
+The server caches the last calculation results, and implements basic HTTP URI discovery by returning available GET request paths in response to HTTP OPTIONS request.
 
 ## Usage
 Send a HTTP OPTIONS request to retrieve available GET request paths.
