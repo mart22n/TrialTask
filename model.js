@@ -60,14 +60,6 @@ class Model {
         }
     }
 
-    bindFactorialFound(callback) {
-        self.onFactorialFound = callback;
-    }
-
-   /* bindFibSequenceFound(callback) {
-        self.onFibSequenceFound = callback;
-    }*/
-
     bindHttpRequestEnd(callback) {
         self.onHttpRequestEnd = callback;
     }

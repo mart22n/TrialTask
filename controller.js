@@ -28,8 +28,6 @@ class Controller {
     self.model = model;
     self.router = router;
     self.view = view;
-
-    //self.model.bindFibSequenceFound(this.onFibSequenceFound)
     self.model.bindHttpRequestEnd(this.onHttpRequestEnd)
   }
   

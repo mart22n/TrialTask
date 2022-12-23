@@ -8,5 +8,6 @@ module.exports = Object.freeze({
         POST: "POST"
     },
     port : 3000,
-    hostName : "127.0.0.1"
+    hostName : "127.0.0.1",
+    CalculatorCacheSize : 3
 });
