@@ -1,6 +1,9 @@
-# TrialTask
+# A Vanilla NodeJS Implementation of a Simple RESTful MVC Server
+The server caches the last calculation results, and implements basic HTTP URI discovery by returning available GET request paths in response to HTTP OPTIONS request.
 
 ## Usage
+Send a HTTP OPTIONS request to retrieve available GET request paths.
+
 For using the GET endpoint, send a HTTP request to localhost:3000 with query ?fact=<number>, 
 e.g: http://localhost:3000/?fact=3
 
