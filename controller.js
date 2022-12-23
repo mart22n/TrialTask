@@ -8,11 +8,18 @@ class Controller {
   }
 
   onFactorialFound(result) {
-    self.model.sendHttpRes(self.view.formatResult(result));
+    result.data = self.view.formatResult(result.data, false);
+    self.model.sendHttpRes(result);
   }
 
   onFibSequenceFound(result){
-      self.model.sendHttpRes(self.view.formatResult(result));
+    result.data = self.view.formatResult(result.data, false);
+      self.model.sendHttpRes(result);
+  }
+
+  onOptionsArrayFilled(optionsArray) {
+    let optionsAsString = self.view.formatResult(optionsArray, true);
+    self.model.sendHttpRes(optionsAsString);
   }
 
   init(model, router, view) {
@@ -22,7 +29,7 @@ class Controller {
     self.router = router;
     self.view = view;
 
-    self.model.bindFibSequenceFound(this.onFibSequenceFound)
+    //self.model.bindFibSequenceFound(this.onFibSequenceFound)
     self.model.bindHttpRequestEnd(this.onHttpRequestEnd)
   }
   

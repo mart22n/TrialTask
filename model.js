@@ -50,6 +50,13 @@ class Model {
             let fibLength = Model.findFibLen(receivedData);
             let result = Calculator.findFibSequence(fibStartNum, fibLength);
             self.onFibSequenceFound(result);
+        },
+
+        options: function(request, receivedData) {
+            let optionsArray = [];
+            let factPathObj = {'factorialPath' : 'fact'};
+            optionsArray.push(factPathObj)
+            self.onOptionsArrayFilled(optionsArray);
         }
     }
 
@@ -57,9 +64,9 @@ class Model {
         self.onFactorialFound = callback;
     }
 
-    bindFibSequenceFound(callback) {
+   /* bindFibSequenceFound(callback) {
         self.onFibSequenceFound = callback;
-    }
+    }*/
 
     bindHttpRequestEnd(callback) {
         self.onHttpRequestEnd = callback;
@@ -79,10 +86,18 @@ class Model {
         request.on("end", () => {self.onHttpRequestEnd(request, self.receivedData)});
     }
 
-    sendHttpRes(data) {
+    sendHttpRes(response) {
         self.httpRes.setHeader("Content-type", "text/plain");
+        if(response.cached == true) {
+            self.httpRes.setHeader("cache-control", "public");
+        }
         self.httpRes.writeHead(200);
-        self.httpRes.write(data);
+        if (typeof response === 'string' || response instanceof String) {
+            self.httpRes.write(response);
+        }
+        else {
+            self.httpRes.write(response.data);
+        }
         self.httpRes.end("\n");
     }
 

@@ -5,7 +5,7 @@ class Router {
     }
 
     /*
-      route the POST and GET requests to corresponding
+      route the POST, GET and OPTIONS requests to corresponding
       methods in Model.httpRequestHandlers array
     */
     route(req, receivedData) {
